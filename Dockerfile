@@ -10,5 +10,6 @@ COPY ./templates /code/templates
 RUN chgrp -R 0 /code && \
     chmod -R g=u /code
 
+RUN ls
 EXPOSE 8080
 CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0"]
