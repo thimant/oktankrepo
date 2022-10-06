@@ -14,4 +14,4 @@ ENV FILES_BASEPATH=/tmp
 
 EXPOSE 8080
 ENTRYPOINT ["/sbin/run.sh"]
-CMD ["python3 app.py", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["python app.py", "--host", "0.0.0.0", "--port", "8080"]
