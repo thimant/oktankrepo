@@ -4,7 +4,7 @@ import pymysql
 
 app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<USERNAME>:<PASSWORD>@<RDSENDPOINT>/<DBNAME>?charset=utf8mb4'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:Trimun@01@oktank-onprem.ccpmq8nftt1f.us-east-1.rds.amazonaws.com/oktankdb?charset=utf8mb4'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:mypassword@oktank-onprem.ccpmq8nftt1f.us-east-1.rds.amazonaws.com/oktankdb?charset=utf8mb4'
 
 db = SQLAlchemy(app)
 
