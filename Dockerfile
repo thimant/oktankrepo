@@ -12,4 +12,4 @@ RUN chgrp -R 0 /code && \
     chmod -R g=u /code
 
 EXPOSE 8080
-CMD ["python3", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["python3", "--host=0.0.0.0", "--port", "8080"]
