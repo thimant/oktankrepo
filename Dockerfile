@@ -5,6 +5,7 @@ WORKDIR /code
 
 COPY requirements.txt /code/requirements.txt 
 RUN pip3 install -r requirements.txt
+COPY app.py /code/app.py
 
 COPY ./templates /code/templates
 RUN chgrp -R 0 /code && \
