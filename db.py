@@ -11,9 +11,9 @@ db = SQLAlchemy(app)
 class students(db.Model):
    id = db.Column('student_id', db.Integer, primary_key = True)
    name = db.Column(db.String(100))
-   city = db.Column(db.String(50))  
-   addr = db.Column(db.String(200))
-   pin = db.Column(db.String(10))
+   enem = db.Column(db.String(50))  
+   email = db.Column(db.String(200))
+   gender = db.Column(db.String(10))
 
 if __name__ == '__main__':
     with app.app_context():
