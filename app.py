@@ -11,15 +11,15 @@ db = SQLAlchemy(app)
 class students(db.Model):
    id = db.Column('student_id', db.Integer, primary_key = True)
    name = db.Column(db.String(100))
-   city = db.Column(db.String(50))  
-   addr = db.Column(db.String(200))
-   pin = db.Column(db.String(10))
+   enem = db.Column(db.String(50))  
+   email = db.Column(db.String(200))
+   gender = db.Column(db.String(10))
 
-def __init__(self, name, city, addr,pin):
+def __init__(self, name, enem, email,gender):
    self.name = name
-   self.city = city
-   self.addr = addr
-   self.pin = pin
+   self.enem = enem
+   self.email = email
+   self.gender = gender
 
 @app.route('/')
 def show_all():
@@ -28,11 +28,11 @@ def show_all():
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
    if request.method == 'POST':
-      if not request.form['name'] or not request.form['city'] or not request.form['addr']:
+      if not request.form['name'] or not request.form['enem'] or not request.form['email']:
          flash('Please enter all the fields', 'error')
       else:
-         student = students(name=request.form['name'], city=request.form['city'],
-            addr=request.form['addr'], pin=request.form['pin'])
+         student = students(name=request.form['name'], enem=request.form['enem'],
+            email=request.form['email'], gender=request.form['gender'])
          
          db.session.add(student)
          db.session.commit()
